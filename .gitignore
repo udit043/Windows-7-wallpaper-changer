@@ -1,28 +1,31 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
+void Stealth();
+void Stealth()
+{
+  HWND Stealth;
+  AllocConsole();
+  Stealth = FindWindowA("ConsoleWindowClass", NULL);
+  ShowWindow(Stealth,0);
+}
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+int main()
+{
+  Stealth();	
+  const wchar_t *filenm = L"C:\\Users\\Udit Raikwar\\Pictures\\finaldp1.jpg"; //address of your image
+  bool isWallSet=SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0,(void*)filenm, SPIF_UPDATEINIFILE);	 
+  if(isWallSet)
+   {
+  	 cout<<"True\n";
+   }
+ else
+ {
+	 cout<<"False\n";
+ }
+ cout<<GetLastError()<<"\n";
+ return 0;
+}
