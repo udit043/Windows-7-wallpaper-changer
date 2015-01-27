@@ -16,16 +16,15 @@ void Stealth()
 int main()
 {
   Stealth();	
-  const wchar_t *filenm = L"C:\\Users\\Udit Raikwar\\Pictures\\finaldp1.jpg"; //address of your image
+  const wchar_t *filenm = "C:\\Users\\Udit Raikwar\\Pictures\\finaldp1.jpg"; //address of your image
   bool isWallSet=SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0,(void*)filenm, SPIF_UPDATEINIFILE);	 
   if(isWallSet)
    {
-  	 cout<<"True\n";
+  	 system("cls");
    }
  else
  {
-	 cout<<"False\n";
+	 system("cls");
  }
- cout<<GetLastError()<<"\n";
  return 0;
 }
