@@ -15,16 +15,8 @@ void Stealth()
 
 int main()
 {
-  Stealth();	
+  Stealth();  //To hide console window	
   const wchar_t *filenm = "C:\\Users\\Udit Raikwar\\Pictures\\finaldp1.jpg"; //address of your image
   bool isWallSet=SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0,(void*)filenm, SPIF_UPDATEINIFILE);	 
-  if(isWallSet)
-   {
-  	 system("cls");
-   }
- else
- {
-	 system("cls");
- }
- return 0;
+  return 0;
 }
